@@ -1,10 +1,11 @@
 
 /**
- * Write a description of class Pesanan here.
+ * Program JHotel untuk bisnis perhotelan.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Faisal Akbar
+ * @version March-01-2018
  */
+
 public class Pesanan
 {
     // instance variables - replace the example below with your own
@@ -14,51 +15,55 @@ public class Pesanan
     private String jenis_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
-   
-    public Pesanan()
+    
+    public Pesanan(double biaya, Customer pelanggan)
     {
-
+        this.biaya = biaya;
+        this.pelanggan = pelanggan;
     }
 
     public double getBiaya()
     {
-        return 0;
+        return biaya;
     }
     
     public Customer getPelanggan()
     {
-        return null;
+        return pelanggan;
     }
     
         public boolean getStatusDiproses()
     {
-        return false;
+        return isDiproses;
     }
     
         public boolean getStatusSelesai()
     {
-        return false;
+        return isSelesai;
     }
     
-        public double setBiaya(double biaya)
+        public void setBiaya(double biaya)
     {
-        return 0;
+        this.biaya = biaya;
     }
     
-        public Customer setStatusDiproses(Customer baru)
+        public void setPelanggan(Customer baru)
     {
-        return null;
+        this.pelanggan = baru;
     }
     
-        public boolean setStatusDiproses(boolean diproses)
+        public void setStatusDiproses(boolean diproses)
     {
-        return false;
+        this.isDiproses = diproses;
     }
     
-        public boolean setStatusSelesai(boolean diproses)
+        public void setStatusSelesai(boolean diproses)
     {
-        return false;
+        this.isSelesai = diproses;
     }
     
+    public void printData()
+    {
     
+    }
 }

@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=DatabasePesanan
+comment0.text=\r\n\ Program\ JHotel\ untuk\ bisnis\ perhotelan.\r\n\r\n\ @author\ Faisal\ Akbar\r\n\ @version\ March-01-2018\r\n
+comment1.params=baru
+comment1.target=boolean\ addPesanan(Pesanan)
+comment2.params=pesan
+comment2.target=boolean\ sampleMethod(Pesanan)
+comment3.params=cost
+comment3.target=Pesanan\ getPesanan(Customer)
+comment4.params=
+comment4.target=java.lang.String[]\ getPesananDatabase()
+comment5.params=pesan
+comment5.target=void\ pesananDibatalkan(Pesanan)
+numComments=6

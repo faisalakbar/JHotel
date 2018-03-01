@@ -1,3 +1,9 @@
+/**
+ * Program JHotel untuk bisnis perhotelan.
+ *
+ * @author Faisal Akbar
+ * @version March-01-2018
+ */
 
 public class DatabasePesanan
 {
