@@ -7,38 +7,75 @@
 
 public class Customer
 {
-    
+    // instance variables - replace the example below with your own
     protected int id;
     protected String nama;
     
-    public void Customer(int id, String nama)
+    /**
+     * Constructor for objects of class Customer
+     * 
+     * @param id
+     * @param nama
+     */
+    public Customer(int id, String nama)
     {
+        //instance variable
         this.id = id;
-        this.nama=nama;
+        this.nama = nama;
     }
 
+    /**
+     * Accessor for objects of class Customer
+     * untuk mendapatkan nilai id
+     * 
+     * @return id
+     */
     public int getID()
     {
-      return id;
+        // put your code here
+        
+        return id;
     }
     
+    /**
+     * Accessor for objects of class Customer
+     * untuk mendapatkan nilai nama
+     * 
+     * @return nama
+     */
     public String getNama()
     {
-      return nama;
+        //put your code here
+        
+        return nama;
     }
     
+    /**
+     * Mutator for objects of class Customer
+     * untuk menentukan nilai id
+     * 
+     * @param id
+     */
     public void setID(int id)
     {
-        this.id = id;
+       //put your code here
+       this.id = id;
     }
     
+    /**
+     * Mutator for objects of class Customer
+     * untuk menentukan nilai id
+     * 
+     * @param nama
+     */
     public void setNama(String nama)
     {
-        this.nama = nama; 
+        //code
+        this.nama = nama;
     }
     
     public void printData()
     {
-       
+        System.out.printf("Nama Customer: %s \n", nama);
     }
 }

@@ -4,66 +4,136 @@
  *
  * @author Faisal Akbar
  * @version March-01-2018
+ * @param biaya
+ * @param pelanggan
  */
 
 public class Pesanan
 {
-    // instance variables - replace the example below with your own
     private double biaya;
     private Customer pelanggan;
     private String nama_pelanggan;
     private String jenis_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
+    private Room kamar;
     
+     /**
+     * Constructor for objects of class Pesanan
+     * 
+     * @param biaya
+     * @param pelanggan
+     */
     public Pesanan(double biaya, Customer pelanggan)
     {
         this.biaya = biaya;
         this.pelanggan = pelanggan;
     }
-
+    
+     /**
+     * Accessor for objects of class Pesanan
+     * untuk mendapatkan nilai biaya
+     * 
+     * @return biaya
+     */
     public double getBiaya()
     {
         return biaya;
     }
     
+     /**
+     * Accessor for objects of class Pesanan
+     * untuk mendapatkan nilai biaya
+     * 
+     * @return pelanggan
+     */
     public Customer getPelanggan()
     {
         return pelanggan;
     }
     
+     /**
+     * Accessor for objects of class Pesanan
+     * untuk mendapatkan nilai biaya
+     * 
+     * @return isDiproses
+     */
         public boolean getStatusDiproses()
     {
         return isDiproses;
     }
     
-        public boolean getStatusSelesai()
+    /**
+     * Accessor for objects of class Pesanan
+     * untuk mendapatkan nilai status selesai
+     * 
+     * @return isSelesai
+     */
+    public boolean getStatusSelesai()
     {
         return isSelesai;
     }
     
-        public void setBiaya(double biaya)
+    public Room getRoom()
+    {
+        return kamar;
+    }
+    
+    /**
+     * Mutator for objects of class Pesanan
+     * untuk menentukan nilai biaya
+     * 
+     * @param biaya
+     */
+    public void setBiaya(double biaya)
     {
         this.biaya = biaya;
     }
     
-        public void setPelanggan(Customer baru)
+    /**
+     * Mutator for objects of class Pesanan
+     * untuk menenetukan nilai pelanggan
+     * 
+     * @param baru
+     */
+    public void setPelanggan(Customer baru)
     {
-        this.pelanggan = baru;
+        pelanggan = baru;
     }
     
-        public void setStatusDiproses(boolean diproses)
+    /**
+     * Mutator for objects of class Pesanan
+     * untuk menentukan nilai status diproses
+     * 
+     * @param diproses
+     */
+    public void setStatusDiproses(boolean diproses)
     {
-        this.isDiproses = diproses;
+        isDiproses = diproses;
     }
     
-        public void setStatusSelesai(boolean diproses)
+    /**
+     * Mutator for objects of class Pesanan
+     * untuk menentukan nilai status selesai
+     * 
+     * @param diproses
+     */
+    public void setStatusSelesai(boolean diproses)
     {
-        this.isSelesai = diproses;
+        isSelesai = diproses;
     }
     
+    public void setRoom (Room kamar)
+    {
+        this.kamar = kamar;
+        
+    }
+    
+    /**
+     * Method untuk print data
+     */
     public void printData()
     {
-    
+
     }
 }

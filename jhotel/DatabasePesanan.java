@@ -7,31 +7,55 @@
 
 public class DatabasePesanan
 {
+    // instance variables - replace the example below with your own
     private String[] list_pesanan;
 
-        public boolean addPesanan(Pesanan baru)
+    /**
+     * 
+     * @return false
+     */
+    public static boolean addPesanan(Pesanan baru)
     {
-        return false;
-    }
-
-        public boolean sampleMethod(Pesanan pesan)
-    {
+        //code
+        
         return false;
     }
     
-        public Pesanan getPesanan(Customer cost)
+    /**
+     * 
+     * @return false
+     */
+    public boolean removePesanan(Pesanan pesan)
     {
+        //code
+        
+        return false;
+    }
+    
+    /**
+     * 
+     * @return null
+     */
+    public Pesanan getPesanan(Customer cust)
+    {
+        //code
+        
         return null;
     }
     
-        public String[] getPesananDatabase()
+    /**
+     * 
+     * @return null
+     */
+    public String[] getPesananDatabase()
     {
+        //code
+        
         return null;
     }
     
-        public void pesananDibatalkan(Pesanan pesan)
+    public void pesananDibatalkan(Pesanan pesan)
     {
-   
+        //code
     }
 }
-
