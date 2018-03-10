@@ -2,8 +2,8 @@
 /**
  * Write a description of class Administrasi here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Faisal Akbar
+ * @version March-09-2018
  */
 public class Administrasi
 {
@@ -11,7 +11,7 @@ public class Administrasi
     
     public Administrasi()
     {
-
+        
     }
 
 
@@ -42,7 +42,7 @@ public class Administrasi
         kamar.getPesanan().setRoom(null);
     }
     
-    public static void PesananSelesai(Room kamar)
+    public static void pesananSelesai(Room kamar)
     {
         kamar.getPesanan().setStatusSelesai(true);
         kamar.getPesanan().setStatusSelesai(false);

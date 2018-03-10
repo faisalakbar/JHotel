@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=DatabaseHotel
+comment0.text=\r\n\ Program\ JHotel\ untuk\ bisnis\ perhotelan.\r\n\r\n\ @author\ Faisal\ Akbar\r\n\ @version\ March-01-2018\r\n
+comment1.params=baru
+comment1.target=boolean\ addHotel(Hotel)
+comment1.text=\r\n\ \r\n\ @return\ false\r\n
+comment2.params=id
+comment2.target=boolean\ removeHotel(int)
+comment2.text=\r\n\ \r\n\ @return\ false\r\n
+comment3.params=
+comment3.target=java.lang.String[]\ getHotelDatabase()
+comment3.text=\r\n\ \r\n\ @return\ null\r\n
+numComments=4

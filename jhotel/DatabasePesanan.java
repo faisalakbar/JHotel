@@ -7,8 +7,7 @@
 
 public class DatabasePesanan
 {
-    // instance variables - replace the example below with your own
-    private String[] list_pesanan;
+    private static String[] list_pesanan;
 
     /**
      * 
@@ -25,7 +24,7 @@ public class DatabasePesanan
      * 
      * @return false
      */
-    public boolean removePesanan(Pesanan pesan)
+    public static boolean removePesanan(Pesanan pesan)
     {
         //code
         
@@ -36,7 +35,7 @@ public class DatabasePesanan
      * 
      * @return null
      */
-    public Pesanan getPesanan(Customer cust)
+    public static Pesanan getPesanan(Customer cust)
     {
         //code
         
@@ -47,14 +46,14 @@ public class DatabasePesanan
      * 
      * @return null
      */
-    public String[] getPesananDatabase()
+    public static String[] getPesananDatabase()
     {
         //code
         
         return null;
     }
     
-    public void pesananDibatalkan(Pesanan pesan)
+    public static void pesananDibatalkan(Pesanan pesan)
     {
         //code
     }

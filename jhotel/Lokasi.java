@@ -95,6 +95,9 @@ public class Lokasi
     
     public void printData()
     {
-      
+      System.out.println("Lokasi");  
+      System.out.println("Koordinat x:  " + x_coord);
+      System.out.println("Koordinat y:  " + y_coord);
+      System.out.println("Deskripsi Lokasi: " + deskripsiLokasi);
     }
 }

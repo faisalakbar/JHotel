@@ -5,16 +5,16 @@
  * @version March-01-2018
  */
 
-public class DatabaseCustomer
+public class DatabaseRoom
 {
     // instance variables - replace the example below with your own
-    private static String[] list_customer;
-   
+    private String[] list_room;
+
     /**
      * 
      * @return false
      */
-    public static boolean addCustomer(Customer baru)
+    public static boolean addRoom(Customer baru)
     {
         //code
         
@@ -25,7 +25,7 @@ public class DatabaseCustomer
      * 
      * @return false
      */
-    public static boolean removeCustomer(int id)
+    public static boolean removeRoom(int id)
     {
         //code
         
@@ -36,10 +36,11 @@ public class DatabaseCustomer
      * 
      * @return null
      */
-    public static String[] getCustomerDatabase()
+    public static String[] getRoomDatabase()
     {
         //code
         
         return null;
     }
+    
 }

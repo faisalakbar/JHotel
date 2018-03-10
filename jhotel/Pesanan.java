@@ -13,7 +13,7 @@ public class Pesanan
     private double biaya;
     private Customer pelanggan;
     private String nama_pelanggan;
-    private String jenis_kamar;
+    private TipeKamar tipe_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
@@ -54,6 +54,28 @@ public class Pesanan
     
      /**
      * Accessor for objects of class Pesanan
+     * untuk mendapatkan nilai nama_pelanggan
+     * 
+     * @return nama_pelanggan
+     */
+    public String getNamaPelanggan()
+    {
+        return nama_pelanggan;
+    }
+    
+    /**
+     * Accessor for objects of class Pesanan
+     * untuk mendapatkan nilai tipe_kamar
+     * 
+     * @return tipe_kamar
+     */
+    public TipeKamar getTipeKamar()
+    {
+        return tipe_kamar;
+    }
+    
+     /**
+     * Accessor for objects of class Pesanan
      * untuk mendapatkan nilai biaya
      * 
      * @return isDiproses
@@ -74,6 +96,12 @@ public class Pesanan
         return isSelesai;
     }
     
+    /**
+     * Accessor for objects of class Pesanan
+     * untuk mendapatkan nilai status kamar
+     * 
+     * @return kamar
+     */
     public Room getRoom()
     {
         return kamar;
@@ -96,9 +124,31 @@ public class Pesanan
      * 
      * @param baru
      */
-    public void setPelanggan(Customer baru)
+    public void setPelanggan(Customer pelanggan)
     {
-        pelanggan = baru;
+        this.pelanggan = pelanggan;
+    }
+    
+     /**
+     * Mutator for objects of class Pesanan
+     * untuk menenetukan nilai nama_pelanggan
+     * 
+     * @param nama_pelanggan
+     */
+    public void setNamaPelanggan(String nama_pelanggan)
+    {
+        this.nama_pelanggan = nama_pelanggan;
+    }
+    
+    /**
+     * Mutator for objects of class Pesanan
+     * untuk menentukan nilai tipe_kamar
+     * 
+     * @param tipe_kamar
+     */
+    public void setTipeKamar(TipeKamar tipe_kamar)
+    {
+        this.tipe_kamar = tipe_kamar;
     }
     
     /**
@@ -123,6 +173,12 @@ public class Pesanan
         isSelesai = diproses;
     }
     
+    /**
+     * Mutator for objects of class Pesanan
+     * untuk menentukan nilai status kamar
+     * 
+     * @param kamar
+     */
     public void setRoom (Room kamar)
     {
         this.kamar = kamar;
@@ -134,6 +190,10 @@ public class Pesanan
      */
     public void printData()
     {
-
+       System.out.println("Pesanan"); 
+       System.out.println("Nama Pelanggan: " + getPelanggan().getNama());
+       System.out.println("Tipe kamar: " + tipe_kamar);
+       System.out.println("Kondisi Proses:  " + isDiproses);
+       System.out.println("Kondisi Selesai: " + isSelesai);
     }
 }

@@ -16,17 +16,32 @@ public class Room
     private StatusKamar status_kamar;
     private Pesanan pesan;
     
-    /**
-     * Constructor for objects of class 
+     /**
+     * Constructor for objects of class Room
      * 
-     *  
-     * @re
+     * @param hotel
+     * @param nomor_kamar
+     * @param isAvailable
+     * @param customer
+     * @param dailyTariff
+     * @param status_kamar
      */
+    public Room(Hotel hotel, String nomor_kamar, boolean isAvailable, Customer customer, double dailyTariff, StatusKamar status_kamar)
+    {
+        this.hotel = hotel;
+        this.nomor_kamar = nomor_kamar;
+        this.isAvailable = isAvailable;
+        this.customer = customer;
+        this.dailyTariff = dailyTariff;
+        this.status_kamar = status_kamar;
+        
+    }
+
     public Hotel getHotel()
     {
         return hotel;
     }
-
+    
     public int getID()
     {
         return id;
@@ -104,13 +119,12 @@ public class Room
     
     public void printData()
     {
-        System.out.println(hotel);
-        System.out.println(id);
-        System.out.println(nomor_kamar);
-        System.out.println(isAvailable);
-        System.out.println(customer);
-        System.out.println(dailyTariff);
-        System.out.println(status_kamar);
-        System.out.println(pesan);
+        System.out.println("Room");
+        System.out.println("Nama hotel: "+ getHotel().getNama());
+        System.out.println("Nomor Kamar:  "+ nomor_kamar);
+        System.out.println("Status ketersediaan:  "+ isAvailable);
+        customer.printData();
+        System.out.println("Harga:  "+ dailyTariff);
+        System.out.println("Status Kamar: " + status_kamar.toString());
     }
 }

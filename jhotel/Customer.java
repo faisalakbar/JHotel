@@ -32,8 +32,6 @@ public class Customer
      */
     public int getID()
     {
-        // put your code here
-        
         return id;
     }
     
@@ -45,8 +43,6 @@ public class Customer
      */
     public String getNama()
     {
-        //put your code here
-        
         return nama;
     }
     
@@ -58,7 +54,6 @@ public class Customer
      */
     public void setID(int id)
     {
-       //put your code here
        this.id = id;
     }
     
@@ -70,12 +65,13 @@ public class Customer
      */
     public void setNama(String nama)
     {
-        //code
         this.nama = nama;
     }
     
     public void printData()
     {
-        System.out.printf("Nama Customer: %s \n", nama);
+        System.out.println("Customer");
+        System.out.println("Nama Customer:  "+ nama);
+        System.out.println("Id:  "+ id);
     }
 }
