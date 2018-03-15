@@ -14,44 +14,34 @@ public class JHotel
        Customer Ical = new Customer(1, "Ical");
        Lokasi Dago = new Lokasi(12, 21, "Dago");
        Hotel Sakura = new Hotel ("Hotel Sakura",Dago,5);
-       Room room = new Room (Sakura, "12B", true, Ical, 100000, StatusKamar.Vacant);
-       Pesanan pesanan = new Pesanan (16000, Ical);
+       Room single1 = new SingleRoom (Sakura, "12B", true, StatusKamar.Vacant);
+       Pesanan pesanan = new Pesanan (5, Ical, single1);
+       single1.setDailyTariff(9999999);
+       pesanan.setBiaya();
        
        Dago.printData();
        Ical.printData();
        Sakura.printData();
        
-       System.out.println("==========method1===========");
-       Administrasi.pesananDitugaskan(pesanan, room);
-       room.printData();
+       Administrasi.pesananDitugaskan(pesanan, single1);
        pesanan.printData();
+       single1.printData();
        
-       System.out.println("==========method2===========");
-       Administrasi.pesananDibatalkan(room);
-       room.printData();
-       pesanan.printData();
+       if (single1 instanceof DoubleRoom)
+       {
+           System.out.println("Benar double Room");
+        }
+        else
+            System.out.println("Bukan double Room");
+        }
+        
+        
        
-       System.out.println("==========method3===========");
-       Administrasi.pesananDitugaskan(pesanan, room);
-       Administrasi.pesananSelesai(room);
-       room.printData();
-       pesanan.printData();
        
-       System.out.println("==========method4===========");
-       Administrasi.pesananDitugaskan(pesanan, room);
-       Administrasi.pesananDibatalkan(pesanan);
-       room.printData();
-       pesanan.printData();
-       
-       System.out.println("==========method5===========");
-       Administrasi.pesananDitugaskan(pesanan, room);
-       Administrasi.pesananSelesai(pesanan);
-       room.printData();
-       pesanan.printData();
+
   
      
     }
 
-}
 
 

@@ -11,9 +11,8 @@
 public class Pesanan
 {
     private double biaya;
+    private double jumlahHari;
     private Customer pelanggan;
-    private String nama_pelanggan;
-    private TipeKamar tipe_kamar;
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
@@ -24,9 +23,10 @@ public class Pesanan
      * @param biaya
      * @param pelanggan
      */
-    public Pesanan(double biaya, Customer pelanggan)
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar)
     {
-        this.biaya = biaya;
+        this.biaya = kamar.getDailyTariff()*jumlahHari;
+        this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
     }
     
@@ -45,33 +45,22 @@ public class Pesanan
      * Accessor for objects of class Pesanan
      * untuk mendapatkan nilai biaya
      * 
+     * @return biaya
+     */
+    public double getJumlahHari()
+    {
+        return jumlahHari;
+    }
+    
+     /**
+     * Accessor for objects of class Pesanan
+     * untuk mendapatkan nilai biaya
+     * 
      * @return pelanggan
      */
     public Customer getPelanggan()
     {
         return pelanggan;
-    }
-    
-     /**
-     * Accessor for objects of class Pesanan
-     * untuk mendapatkan nilai nama_pelanggan
-     * 
-     * @return nama_pelanggan
-     */
-    public String getNamaPelanggan()
-    {
-        return nama_pelanggan;
-    }
-    
-    /**
-     * Accessor for objects of class Pesanan
-     * untuk mendapatkan nilai tipe_kamar
-     * 
-     * @return tipe_kamar
-     */
-    public TipeKamar getTipeKamar()
-    {
-        return tipe_kamar;
     }
     
      /**
@@ -113,9 +102,21 @@ public class Pesanan
      * 
      * @param biaya
      */
-    public void setBiaya(double biaya)
+    public void setBiaya()
     {
-        this.biaya = biaya;
+        biaya = kamar.getDailyTariff()*jumlahHari;
+    }
+    
+   
+    /**
+     * Mutator for objects of class Pesanan
+     * untuk menentukan nilai biaya
+     * 
+     * @param biaya
+     */
+    public void setJumlahHari(double jumlahHari)
+    {
+        this.jumlahHari = jumlahHari;
     }
     
     /**
@@ -127,28 +128,6 @@ public class Pesanan
     public void setPelanggan(Customer pelanggan)
     {
         this.pelanggan = pelanggan;
-    }
-    
-     /**
-     * Mutator for objects of class Pesanan
-     * untuk menenetukan nilai nama_pelanggan
-     * 
-     * @param nama_pelanggan
-     */
-    public void setNamaPelanggan(String nama_pelanggan)
-    {
-        this.nama_pelanggan = nama_pelanggan;
-    }
-    
-    /**
-     * Mutator for objects of class Pesanan
-     * untuk menentukan nilai tipe_kamar
-     * 
-     * @param tipe_kamar
-     */
-    public void setTipeKamar(TipeKamar tipe_kamar)
-    {
-        this.tipe_kamar = tipe_kamar;
     }
     
     /**
@@ -192,7 +171,8 @@ public class Pesanan
     {
        System.out.println("Pesanan"); 
        System.out.println("Nama Pelanggan: " + getPelanggan().getNama());
-       System.out.println("Tipe kamar: " + tipe_kamar);
+       System.out.println("Jumlah Hari: " + jumlahHari);
+       System.out.println("Biaya: " + biaya);
        System.out.println("Kondisi Proses:  " + isDiproses);
        System.out.println("Kondisi Selesai: " + isSelesai);
     }
