@@ -86,7 +86,7 @@ public class Hotel
         this.bintang = bintang;
     }
     
-    public void printData()
+    //public void printData()
     {
         System.out.println("Hotel");
         System.out.println("Nama Hotel:  "+ nama);

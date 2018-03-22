@@ -7,6 +7,7 @@
  * @param biaya
  * @param pelanggan
  */
+import java.util.*;
 
 public class Pesanan
 {
@@ -16,6 +17,7 @@ public class Pesanan
     private boolean isDiproses;
     private boolean isSelesai;
     private Room kamar;
+    private Date tanggalPesan;
     
      /**
      * Constructor for objects of class Pesanan
@@ -25,9 +27,11 @@ public class Pesanan
      */
     public Pesanan(double jumlahHari, Customer pelanggan, Room kamar)
     {
-        this.biaya = kamar.getDailyTariff()*jumlahHari;
+        
         this.jumlahHari = jumlahHari;
+        this.kamar = kamar;
         this.pelanggan = pelanggan;
+        this.biaya= jumlahHari*getRoom().getDailyTariff();
     }
     
      /**
@@ -96,6 +100,17 @@ public class Pesanan
         return kamar;
     }
     
+     /**
+     * Accessor for objects of class Pesanan
+     * untuk mendapatkan nilai status kamar
+     * 
+     * @return kamar
+     */
+    public Date getTanggalPesan()
+    {
+        return tanggalPesan;
+    }
+    
     /**
      * Mutator for objects of class Pesanan
      * untuk menentukan nilai biaya
@@ -104,7 +119,7 @@ public class Pesanan
      */
     public void setBiaya()
     {
-        biaya = kamar.getDailyTariff()*jumlahHari;
+        biaya = getRoom().getDailyTariff()*jumlahHari;
     }
     
    
@@ -165,9 +180,21 @@ public class Pesanan
     }
     
     /**
+     * Mutator for objects of class Pesanan
+     * untuk menentukan nilai status kamar
+     * 
+     * @param kamar
+     */
+    public void setTanggalPesan (Date tanggalPesan)
+    {
+        this.tanggalPesan = tanggalPesan;
+        
+    }
+    
+    /**
      * Method untuk print data
      */
-    public void printData()
+    //public void printData()
     {
        System.out.println("Pesanan"); 
        System.out.println("Nama Pelanggan: " + getPelanggan().getNama());

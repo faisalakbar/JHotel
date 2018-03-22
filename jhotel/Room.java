@@ -98,7 +98,7 @@ public abstract class Room
         this.pesan = pesan;
     }
     
-    public void printData()
+    //public void printData()
     {
         System.out.println("Room");
         System.out.println("Nama hotel: "+ getHotel().getNama());
