@@ -5,6 +5,7 @@
  * @version March-01-2018
  */
 import java.util.*;
+import java.text.*;
 
 public class Customer
 {
@@ -21,18 +22,21 @@ public class Customer
      * @param id
      * @param nama
      */
-    public Customer(int id, String nama, int tanggal, int bulan, int tahun)
+    public Customer(int id, String nama, int date, int month, int year)
     {
         //instance variable
         this.id = id;
         this.nama = nama;
+        this.dob = new GregorianCalendar(year,month-1,date).getTime();
     }
     
     public Customer(int id, String nama, Date dob)
     {
         //instance variable
         this.id = id;
-        this.nama = nama;;
+        this.nama = nama;
+        this.dob = dob;
+        dob.setMonth(dob.getMonth()-1);
     }
 
     /**
@@ -76,6 +80,9 @@ public class Customer
      */
     public Date getDOB()
     {
+        //System.out.printf("DOB: %te %<tB %<tY", dob);
+        SimpleDateFormat ft = new SimpleDateFormat ("dd MMMMMMMMM yyyy");
+        System.out.println("DOB: " + ft.format(dob)); 
         return dob;
     }
     
@@ -130,10 +137,8 @@ if (email.matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
         this.dob = dob;
     }
     
-    public void printData()
+    public String toString()
     {
-        System.out.println("Customer");
-        System.out.println("Nama Customer:  "+ nama);
-        System.out.println("Id:  "+ id);
+      return("Customer" + "\nNama Customer:  "+ nama + "\nId:  "+ id);
     }
 }

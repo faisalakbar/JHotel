@@ -8,7 +8,7 @@
  * @param pelanggan
  */
 import java.util.*;
-
+import java.text.*;
 public class Pesanan
 {
     private double biaya;
@@ -25,13 +25,25 @@ public class Pesanan
      * @param biaya
      * @param pelanggan
      */
-    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar)
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, int date, int month, int year)
     {
         
         this.jumlahHari = jumlahHari;
         this.kamar = kamar;
         this.pelanggan = pelanggan;
         this.biaya= jumlahHari*getRoom().getDailyTariff();
+        this.tanggalPesan = new GregorianCalendar(year,month-1,date).getTime();
+    }
+    
+    public Pesanan(double jumlahHari, Customer pelanggan, Room kamar, Date tanggalPesan)
+    {
+        
+        this.jumlahHari = jumlahHari;
+        this.kamar = kamar;
+        this.pelanggan = pelanggan;
+        this.biaya= jumlahHari*getRoom().getDailyTariff();
+        this.tanggalPesan = tanggalPesan;
+        tanggalPesan.setMonth(tanggalPesan.getMonth()-1);
     }
     
      /**
@@ -194,13 +206,9 @@ public class Pesanan
     /**
      * Method untuk print data
      */
-    //public void printData()
+    public String toString()
     {
-       System.out.println("Pesanan"); 
-       System.out.println("Nama Pelanggan: " + getPelanggan().getNama());
-       System.out.println("Jumlah Hari: " + jumlahHari);
-       System.out.println("Biaya: " + biaya);
-       System.out.println("Kondisi Proses:  " + isDiproses);
-       System.out.println("Kondisi Selesai: " + isSelesai);
+       return ("Pesanan" + "\nNama Pelanggan: " + getPelanggan().getNama() + "\nJumlah Hari: " + jumlahHari
+       + "Biaya: " + biaya + "\nKondisi Proses:  " + isDiproses + "\nKondisi Selesai: " + isSelesai);
     }
 }

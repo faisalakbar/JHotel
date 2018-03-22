@@ -22,4 +22,6 @@ comment6.text=\r\n\ Mutator\ for\ objects\ of\ class\ Lokasi\r\n\ untuk\ menentu
 comment7.params=deskripsi
 comment7.target=void\ setDeskripsi(java.lang.String)
 comment7.text=\r\n\ Mutator\ for\ objects\ of\ class\ Lokasi\r\n\ untuk\ menentukan\ nilai\ deskripsi\r\n\ \r\n\ @param\ deskripsi\r\n
-numComments=8
+comment8.params=
+comment8.target=java.lang.String\ toString()
+numComments=9

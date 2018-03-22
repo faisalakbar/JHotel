@@ -21,4 +21,6 @@ comment6.text=\r\n\ Mutator\ for\ objects\ of\ class\ Hotel\r\n\ untuk\ menentuk
 comment7.params=bintang
 comment7.target=void\ setBintang(int)
 comment7.text=\r\n\ Mutator\ for\ objects\ of\ class\ Hotel\r\n\ untuk\ menentukan\ nilai\ bintang\r\n\ \r\n\ @param\ bintang\r\n
-numComments=8
+comment8.params=
+comment8.target=java.lang.String\ toString()
+numComments=9

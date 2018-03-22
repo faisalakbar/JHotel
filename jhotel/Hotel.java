@@ -86,11 +86,8 @@ public class Hotel
         this.bintang = bintang;
     }
     
-    //public void printData()
+    public String toString()
     {
-        System.out.println("Hotel");
-        System.out.println("Nama Hotel:  "+ nama);
-        System.out.println("Nama hotel:  "+ getLokasi().getDeskripsi());
-        System.out.println("bintang:  "+ bintang);
+        return ("Hotel" + "\nNama Hotel:  "+ nama + "\nNama hotel:  "+ getLokasi().getDeskripsi() + "\nbintang:  "+ bintang);
     }
 }
