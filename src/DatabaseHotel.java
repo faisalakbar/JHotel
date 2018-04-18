@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 /**
  * Program JHotel untuk bisnis perhotelan.
  *
@@ -8,15 +9,30 @@
 public class DatabaseHotel
 {
     // instance variables - replace the example below with your own
-    private String[] list_hotel;
+    private static ArrayList<Hotel> HOTEL_DATABASE = new ArrayList<>();
+    private static int LAST_HOTEL_ID = 0;
 
     /**
      * 
      * @return false
      */
+    public static ArrayList<Hotel> getHotelDatabase() {
+        return HOTEL_DATABASE;
+    }
+
+    public static int getLastHotelId() {
+        return LAST_HOTEL_ID;
+    }
+
     public static boolean addHotel(Hotel baru)
     {
-        return false;
+        for (Hotel hotel :
+                HOTEL_DATABASE) {
+            if(hotel.getID() == baru.getID()) return false;
+        }
+        HOTEL_DATABASE.add(baru);
+        LAST_HOTEL_ID = baru.getID();
+        return true;
     }
     
     /**
@@ -25,8 +41,17 @@ public class DatabaseHotel
      */
     public static boolean removeHotel(int id)
     {
-        //code
-        
+        for (Hotel hotel :
+                HOTEL_DATABASE) {
+            if(hotel.getID()==id){
+                for (Room kamar :
+                        DatabaseRoom.getRoomsFromHotel(hotel)) {
+                    DatabaseRoom.removeRoom(hotel, kamar.getNomorKamar());
+                }
+                HOTEL_DATABASE.remove(hotel);
+                return true;
+            }
+        }
         return false;
     }
     
@@ -34,10 +59,12 @@ public class DatabaseHotel
      * 
      * @return null
      */
-    public static String[] getHotelDatabase()
+    public static Hotel getHotel(int id)
     {
-        //code
-        
+        for (Hotel hotel :
+                HOTEL_DATABASE) {
+            if (hotel.getID() == id) return hotel;
+        }
         return null;
     }
     

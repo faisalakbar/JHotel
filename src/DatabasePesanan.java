@@ -36,11 +36,13 @@ public class DatabasePesanan
      */
     public static boolean addPesanan(Pesanan baru)
     {
-        if(baru.getStatusAktif()) {
-            return false;
-        } else{
+        if(getPesananAktif(baru.getPelanggan()) == null){
             PESANAN_DATABASE.add(baru);
+            LAST_PESANAN_ID = baru.getID();
             return true;
+        }
+        else {
+            return false;
         }
     }
 
@@ -50,9 +52,10 @@ public class DatabasePesanan
      */
     public static Pesanan getPesanan(int id)
     {
-        for(Pesanan cari : PESANAN_DATABASE){
-            if(cari.getID() == id){
-                return cari;
+        for (Pesanan pesan :
+                PESANAN_DATABASE) {
+            if(pesan.getID() == id){
+                return pesan;
             }
         }
         return null;
@@ -64,9 +67,10 @@ public class DatabasePesanan
      */
     public static Pesanan getPesanan(Room kamar)
     {
-        for(Pesanan cari : PESANAN_DATABASE){
-            if(cari.getRoom() == kamar){
-                return cari;
+        for (Pesanan pesan :
+                PESANAN_DATABASE) {
+            if(kamar.equals(pesan.getRoom())==true){
+                return pesan;
             }
         }
         return null;
@@ -78,9 +82,10 @@ public class DatabasePesanan
      */
     public static Pesanan getPesananAktif(Customer pelanggan)
     {
-        for(Pesanan cari : PESANAN_DATABASE){
-            if(cari.getStatusAktif() == true){
-                return cari;
+        for (Pesanan pesan :
+                PESANAN_DATABASE) {
+            if (pesan.getStatusAktif() == true && pesan.getPelanggan().equals(pelanggan) == true){
+                return pesan;
             }
         }
         return null;
@@ -93,7 +98,17 @@ public class DatabasePesanan
      */
     public static boolean removePesanan(Pesanan pesan)
     {
+        for (Pesanan pesan2 :
+                PESANAN_DATABASE) {
+            if(pesan.equals(pesan2)){
+                if(pesan.getRoom() != null) Administrasi.pesananDibatalkan(pesan);
+                else if(pesan.getStatusAktif() == true) pesan.setStatusAktif(false);
+                PESANAN_DATABASE.remove(pesan2);
+                return true;
+            }
+        }
         return false;
+
     }
 
 }

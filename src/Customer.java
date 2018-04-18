@@ -23,7 +23,7 @@ public class Customer
      * @param id
      * @param nama
      */
-    public Customer(int id, String nama, int date, int month, int year)
+    public Customer(String nama, int date, int month, int year)
     {
         //instance variable
         this.id = id;
@@ -37,7 +37,6 @@ public class Customer
         this.id = id;
         this.nama = nama;
         this.dob = dob;
-        dob.setMonth(dob.getMonth()-1);
     }
 
     /**
@@ -140,7 +139,7 @@ public class Customer
     
     public String toString()
     {
-        if(DatabasePesanan.getPesanan(this)==null)
+        if(DatabasePesanan.getPesananAktif(this)==null)
         {
             return "\nCustomer ID \t:" + getID() 
                 + "\nName \t\t:" + getNama()

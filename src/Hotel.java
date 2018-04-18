@@ -8,6 +8,7 @@
 public class Hotel
 {
     // instance variables - replace the example below with your own
+    private int id;
     private String nama;
     private Lokasi lokasi;
     private int bintang;
@@ -18,8 +19,13 @@ public class Hotel
         this.nama = nama;
         this.lokasi = lokasi;
         this.bintang = bintang;
+        this.id = DatabaseHotel.getLastHotelId()+1;
     }
-    
+
+    public int getID() {
+        return id;
+    }
+
     /**
      * Accessor for objects of class Hotel
      * untuk mendapatkan nilai nama
@@ -59,6 +65,11 @@ public class Hotel
      * 
      * @param nama
      */
+
+    public void setID(int id) {
+        this.id = id;
+    }
+
     public void setNama(String nama)
     {
         this.nama = nama;

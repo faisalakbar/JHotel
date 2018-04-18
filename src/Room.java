@@ -11,15 +11,12 @@ public abstract class Room
     private String nomor_kamar;
     protected double dailyTariff;
     private StatusKamar status_kamar;
-    private Pesanan pesan;
     
      /**
      * Constructor for objects of class Room
      * 
      * @param hotel
      * @param nomor_kamar
-     * @param customer
-     * @param dailyTariff
      * @param status_kamar
      */
     public Room(Hotel hotel, String nomor_kamar, StatusKamar status_kamar)
@@ -30,7 +27,7 @@ public abstract class Room
         
     }
 
-    public Hotel getHotel()
+        public Hotel getHotel()
     {
         return hotel;
     }
@@ -48,11 +45,6 @@ public abstract class Room
         public StatusKamar getStatusKamar()
     {
         return status_kamar;
-    }
-    
-        public Pesanan getPesanan()
-    {
-        return pesan;
     }
     
         public abstract TipeKamar getTipeKamar();
@@ -78,17 +70,22 @@ public abstract class Room
         this.status_kamar=status_kamar;
     }
     
-        public void setPesanan (Pesanan pesan)
-    {
-        this.pesan = pesan;
-    }
-    
     public String toString()
     {
-            return "\nNama Hotel \t\t:" + getHotel().getNama() 
-                + "\nTipe Kamar \t\t:" + getTipeKamar()
-                + "\nHarga \t\t:" + getDailyTariff()
-                + "\nStatus Kamar \t\t:" + getStatusKamar().toString()
-                + "Pelanggan \t\t:" + getPesanan().getPelanggan().getNama();
+        if(DatabasePesanan.getPesanan(this) == null)
+        {
+            return "\nNama Hotel \t\t:" + getHotel().getNama()
+                    + "\nTipe Kamar \t\t:" + getTipeKamar()
+                    + "\nHarga \t\t:" + getDailyTariff()
+                    + "\nStatus Kamar \t\t:" + getStatusKamar().toString();
+        }
+        else
+        {
+            return "\nNama Hotel \t\t:" + getHotel().getNama()
+                    + "\nTipe Kamar \t\t:" + getTipeKamar()
+                    + "\nHarga \t\t:" + getDailyTariff()
+                    + "\nStatus Kamar \t\t:" + getStatusKamar().toString()
+                    + "Pelanggan \t\t:" + DatabasePesanan.getPesanan(this).getPelanggan().getNama();
+        }
     }
 }

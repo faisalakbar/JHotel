@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Program JHotel untuk bisnis perhotelan.
  *
@@ -8,17 +10,30 @@
 public class DatabaseCustomer
 {
     // instance variables - replace the example below with your own
-    private static String[] list_customer;
-   
+    private static ArrayList<Customer> CUSTOMER_DATABASE = new ArrayList<>();
+    private static int LAST_CUSTOMER_ID = 0;
+
+    public static ArrayList<Customer> getCustomerDatabase(){
+        return CUSTOMER_DATABASE;
+    }
+
+    public static int getLastCustomerID() {
+        return LAST_CUSTOMER_ID;
+    }
+
     /**
      * 
      * @return false
      */
     public static boolean addCustomer(Customer baru)
     {
-        //code
-        
-        return false;
+        for (Customer cust :
+                CUSTOMER_DATABASE) {
+            if(cust.getID() == baru.getID()) return false;
+        }
+        CUSTOMER_DATABASE.add(baru);
+        LAST_CUSTOMER_ID = baru.getID();
+        return true;
     }
     
     /**
@@ -27,8 +42,17 @@ public class DatabaseCustomer
      */
     public static boolean removeCustomer(int id)
     {
-        //code
-        
+        for (Customer cust :
+                CUSTOMER_DATABASE) {
+            if(cust.getID()==id){
+                for (Pesanan pesan :
+                        DatabasePesanan.getPesananDatabase()) {
+                    if(pesan.getPelanggan().equals(cust)) DatabasePesanan.removePesanan(pesan);
+                }
+                CUSTOMER_DATABASE.remove(cust);
+                return true;
+            }
+        }
         return false;
     }
     
@@ -36,10 +60,12 @@ public class DatabaseCustomer
      * 
      * @return null
      */
-    public static String[] getCustomerDatabase()
+    public static Customer getCustomer(int id)
     {
-        //code
-        
+        for (Customer cust :
+                CUSTOMER_DATABASE) {
+            if (cust.getID() == id) return cust;
+        }
         return null;
     }
 }

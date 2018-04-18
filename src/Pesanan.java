@@ -27,7 +27,7 @@ public class Pesanan
      * @param biaya
      * @param pelanggan
      */
-    public Pesanan(double jumlahHari, Customer pelanggan, int date, int month, int year)
+    public Pesanan(double jumlahHari, Customer pelanggan)
     {
         
         this.jumlahHari = jumlahHari;
@@ -35,6 +35,7 @@ public class Pesanan
         this.biaya= kamar.getDailyTariff()*jumlahHari;
         this.isAktif = true;
         this.tanggalPesan = new Date();
+        this.id = DatabasePesanan.getLastPesananId()+1;
     }
 
 
@@ -81,17 +82,6 @@ public class Pesanan
     {
         return jumlahHari;
     }
-
-    /**
-     * Accessor for objects of class Pesanan
-     * untuk mendapatkan nilai biaya
-     *
-     * @return isAktif
-     */
-    public boolean getStatusAktif()
-    {
-        return isAktif;
-    }
     
      /**
      * Accessor for objects of class Pesanan
@@ -103,7 +93,18 @@ public class Pesanan
     {
         return isDiproses;
     }
-    
+
+    /**
+     * Accessor for objects of class Pesanan
+     * untuk mendapatkan nilai biaya
+     *
+     * @return isAktif
+     */
+    public boolean getStatusAktif()
+    {
+        return isAktif;
+    }
+
     /**
      * Accessor for objects of class Pesanan
      * untuk mendapatkan nilai status selesai
