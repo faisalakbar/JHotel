@@ -32,7 +32,6 @@ public class Pesanan
         
         this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
-        this.biaya= kamar.getDailyTariff()*jumlahHari;
         this.isAktif = true;
         this.tanggalPesan = new Date();
         this.id = DatabasePesanan.getLastPesananId()+1;
@@ -175,7 +174,7 @@ public class Pesanan
      * Mutator for objects of class Pesanan
      * untuk menentukan nilai biaya
      * 
-     * @param biaya
+     * @param jumlahHari
      */
     public void setJumlahHari(double jumlahHari)
     {
@@ -186,7 +185,7 @@ public class Pesanan
      * Mutator for objects of class Pesanan
      * untuk menentukan nilai status diproses
      *
-     * @param diproses
+     * @param aktif
      */
     public void setStatusAktif(boolean aktif)
     {
@@ -246,11 +245,23 @@ public class Pesanan
         if(isDiproses == true && isSelesai == false) final_status = "DIPROSES";
         else if(isDiproses == false && isSelesai == false) final_status = "KOSONG";
         else if(isDiproses == false && isSelesai == true) final_status = "SELESAI";
-        
-        return "Dibuat oleh " + getPelanggan().getNama() 
-            + ". Proses booking untuk " + getRoom().getHotel().getNama() 
-            + "kamar nomor " + getRoom().getNomorKamar() 
-            + "dengan tipe kamar yang diinginkan " + getRoom().getTipeKamar().toString() 
-            + ". Status: " + final_status + ".";
+
+        else if (kamar != null) {
+            return "\n Pesanan" +
+                    "\n pelanggan=" + pelanggan.getNama() +
+                    "\n jumlah hari =" + jumlahHari +
+                    "\n hotel=" + kamar.getHotel().getNama() +
+                    "\n kamar=" + kamar.getNomorKamar() +
+                    "\n tipeKamar=" + kamar.getTipeKamar() +
+                    "\n status='" + final_status;
+        }
+        return "\n Pesanan" +
+                "\n pelanggan=" + pelanggan.getNama() +
+                "\n jumlah hari=" + jumlahHari +
+                "\n hotel=null" +
+                "\n kamar=null" +
+                "\n tipeKamar=" +
+                "\n status='" + final_status;
+
+        }
     }
-}

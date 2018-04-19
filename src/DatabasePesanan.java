@@ -34,7 +34,7 @@ public class DatabasePesanan
      * 
      * @return false
      */
-    public static boolean addPesanan(Pesanan baru)
+    public static boolean addPesanan(Pesanan baru) throws PesananSudahAdaException
     {
         if(getPesananAktif(baru.getPelanggan()) == null){
             PESANAN_DATABASE.add(baru);
@@ -42,7 +42,7 @@ public class DatabasePesanan
             return true;
         }
         else {
-            return false;
+            throw new PesananSudahAdaException(baru);
         }
     }
 
@@ -96,7 +96,7 @@ public class DatabasePesanan
      *
      * @return false
      */
-    public static boolean removePesanan(Pesanan pesan)
+    public static boolean removePesanan(Pesanan pesan) throws PesananTidakDitemukanException
     {
         for (Pesanan pesan2 :
                 PESANAN_DATABASE) {
@@ -107,7 +107,7 @@ public class DatabasePesanan
                 return true;
             }
         }
-        return false;
+        throw new PesananTidakDitemukanException(pesan.getPelanggan());
 
     }
 

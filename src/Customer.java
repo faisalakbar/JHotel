@@ -23,19 +23,20 @@ public class Customer
      * @param id
      * @param nama
      */
-    public Customer(String nama, int date, int month, int year)
+    public Customer(String nama,int date, int month, int year, String email)
     {
-        //instance variable
-        this.id = id;
+        this.id = DatabaseCustomer.getLastCustomerID()+1;
         this.nama = nama;
+        this.email = email;
         this.dob = new GregorianCalendar(year,month-1,date).getTime();
     }
-    
-    public Customer(int id, String nama, Date dob)
+
+    public Customer(String nama, String email, Date dob)
     {
         //instance variable
-        this.id = id;
+        this.id = DatabaseCustomer.getLastCustomerID()+1;
         this.nama = nama;
+        this.email = email;
         this.dob = dob;
     }
 

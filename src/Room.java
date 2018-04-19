@@ -14,17 +14,13 @@ public abstract class Room
     
      /**
      * Constructor for objects of class Room
-     * 
-     * @param hotel
-     * @param nomor_kamar
-     * @param status_kamar
+     *
      */
-    public Room(Hotel hotel, String nomor_kamar, StatusKamar status_kamar)
+    public Room(Hotel hotel, String nomor_kamar)
     {
         this.hotel = hotel;
         this.nomor_kamar = nomor_kamar;
-        this.status_kamar = status_kamar;
-        
+        status_kamar = StatusKamar.VACANT;
     }
 
         public Hotel getHotel()
@@ -77,14 +73,14 @@ public abstract class Room
             return "\nNama Hotel \t\t:" + getHotel().getNama()
                     + "\nTipe Kamar \t\t:" + getTipeKamar()
                     + "\nHarga \t\t:" + getDailyTariff()
-                    + "\nStatus Kamar \t\t:" + getStatusKamar().toString();
+                    + "\nStatus Kamar \t\t:" + getStatusKamar();
         }
         else
         {
             return "\nNama Hotel \t\t:" + getHotel().getNama()
                     + "\nTipe Kamar \t\t:" + getTipeKamar()
                     + "\nHarga \t\t:" + getDailyTariff()
-                    + "\nStatus Kamar \t\t:" + getStatusKamar().toString()
+                    + "\nStatus Kamar \t\t:" + getStatusKamar()
                     + "Pelanggan \t\t:" + DatabasePesanan.getPesanan(this).getPelanggan().getNama();
         }
     }
