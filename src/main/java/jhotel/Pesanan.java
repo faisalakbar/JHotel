@@ -118,7 +118,7 @@ public class Pesanan
      * Accessor for objects of class Pesanan
      * untuk mendapatkan nilai status kamar
      * 
-     * @return kamar
+     * @return date
      */
     public Date getTanggalPesan()
     {
@@ -129,7 +129,7 @@ public class Pesanan
      * Mutator for objects of class Pesanan
      * untuk menentukan nilai biaya
      *
-     * @param biaya
+     * @param id
      */
     public void setID(int id)
     {
@@ -195,7 +195,7 @@ public class Pesanan
      * Mutator for objects of class Pesanan
      * untuk menentukan nilai status selesai
      * 
-     * @param diproses
+     * @param isSelesai
      */
     public void setStatusSelesai(boolean selesai)
     {
@@ -217,7 +217,7 @@ public class Pesanan
      * Mutator for objects of class Pesanan
      * untuk menentukan nilai status kamar
      * 
-     * @param kamar
+     * @param tanngalpesan
      */
     public void setTanggalPesan (Date tanggalPesan)
     {

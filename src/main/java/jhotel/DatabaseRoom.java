@@ -38,7 +38,7 @@ public class DatabaseRoom
     {
         for (Room kamar :
                 ROOM_DATABASE) {
-            if (kamar.getHotel().equals(hotel) && kamar.getNomorKamar().compareTo(nomor_kamar) == 0) {
+            if (kamar.getHotel().equals(hotel) && kamar.getNomorKamar().equals(nomor_kamar)) {
                 return kamar;
             }
         }

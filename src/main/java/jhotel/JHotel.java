@@ -13,6 +13,24 @@ public class JHotel {
     public static void main(String[] args) {
         SpringApplication.run(JHotel.class, args);
 
+        try {
+            DatabaseHotel.addHotel(new Hotel("Alexis", new Lokasi(342, 798, "Kering nan Keras"), 5));
+            DatabaseHotel.addHotel(new Hotel("Sultan", new Lokasi(343, 743, "Dingin nan Ramai"), 4));
+        } catch (HotelSudahAdaException e) {
+            System.out.println("Hotel Sudah ada");
+            System.out.println(e.getPesan());
+        }
+
+        try {
+            DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1), "A111"));
+            DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(2), "B222"));
+            DatabaseRoom.addRoom(new PremiumRoom(DatabaseHotel.getHotel(1), "C333"));
+        } catch (RoomSudahAdaException e) {
+            System.out.println("Room sudah ada");
+            System.out.println(e.getPesan());
+        }
+
+
 /*
         try {
             DatabaseCustomer.addCustomer(new Customer("Abay", 12, 1, 1995, "Abay@gmail.com"));
