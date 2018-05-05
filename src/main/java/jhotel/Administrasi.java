@@ -51,7 +51,6 @@ public class Administrasi
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);
-        pesan.setRoom(null);
     }
     
     public static void pesananSelesai(Pesanan pesan)
@@ -60,6 +59,5 @@ public class Administrasi
         pesan.setStatusSelesai(true);
         pesan.setStatusDiproses(false);
         pesan.setStatusAktif(false);
-        pesan.setRoom(null);
     }
 }

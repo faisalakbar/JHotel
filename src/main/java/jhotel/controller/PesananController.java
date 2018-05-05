@@ -28,7 +28,8 @@ public class PesananController {
             e.getMessage();
             return null;
         }
-        Administrasi.pesananDitugaskan(DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(id_customer)), DatabaseRoom.getRoom(DatabaseHotel.getHotel(id_hotel),nomor_kamar));
+        Administrasi.pesananDitugaskan(DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(id_customer)),
+                DatabaseRoom.getRoom(DatabaseHotel.getHotel(id_hotel),nomor_kamar));
         return DatabasePesanan.getPesananAktif(DatabaseCustomer.getCustomer(id_customer));
     }
 
